@@ -31,8 +31,10 @@ jobs:
       - name: Build with Astro
         run: bun run build
       
-      - name: Add .nojekyll file
-        run: touch dist/.nojekyll
+      - name: No jekyll
+        run: |
+          touch dist/.nojekyll
+          echo "Disabling Jekyll processing for GitHub Pages"
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
